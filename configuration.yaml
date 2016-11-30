@@ -1,5 +1,5 @@
 # Name of your Slack (Deprecated in favour of the SLACK_NAME env var)
-slack_name: rands-leadership
+slack_name: articulate
 
 # Name of environment variable holding a valid Slackbot API token
 slackbot_api_token_env_varname: SB_TOKEN
@@ -32,11 +32,31 @@ announce_channel: "zmeta-new-channels"
 control_channel: "zmeta-control"
 
 # Where to send destalinator debug logs
-log_channel: "destalinator-log"
+log_channel: "tidyslack-log"
 
 # Channels to ignore when archiving (i.e. they can be silent and not get archived)
 ignore_channels:
-  - destalinator-log
+  - chaos-monkey
+  - high-impact-issues
+  - oss
+  - oss-security
+  - people
+  - postmortems
+  - slack-tips
+  - studio-notifications
+  - tidyslack-log
+  - marketo-noise
+  - 360-start-pages
+  - articulate-dot-com
+  - dailydemo
+  - diversity
+  - giffies
+  - gmail
+  - "null"
+  - pennsylvania
+  - shush
+  - storyline-releases
+  - retreat
 
 # Regular expression patterns for additional channels to ignore during archiving
 ignore_channel_patterns:
