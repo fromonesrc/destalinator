@@ -109,7 +109,7 @@ class Destalinator(object):
         no messages in the last DAYS days which are not from config.ignore_users
         """
         minimum_age = self.channel_minimum_age(channel_name, days)
-        self.debug("{} is {} days stale".format(channel_name, days))
+        self.debug("{} is at least {} days old".format(channel_name, days))
         if not minimum_age:
             self.debug("Not checking if {} is stale -- it's too new".format(channel_name))
             return False
