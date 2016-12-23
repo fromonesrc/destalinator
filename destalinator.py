@@ -156,7 +156,8 @@ class Destalinator(object):
             self.debug("Not warning {} because it's in ignore_channels".format(channel_name))
             return False
         messages = self.get_messages(channel_name, days)
-        # print "messages for {}: {}".format(channel_name, messages)
+        if channel_name == "woke":
+            print "messages for {}: {}".format(channel_name, messages) 
         texts = [x.get("text").strip() for x in messages if x.get("text")]
         if self.warning_text in texts and not force_warn:
             # nothing to do
