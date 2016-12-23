@@ -46,7 +46,6 @@ ignore_channels:
   - studio-notifications
   - tidyslack-log
   - marketo-noise
-  - 360-start-pages
   - articulate-dot-com
   - dailydemo
   - diversity
