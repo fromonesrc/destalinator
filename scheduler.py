@@ -10,7 +10,7 @@ logging.basicConfig()
 sched = BlockingScheduler()
 
 #@sched.scheduled_job("cron", hour=4)
-@sched.scheduled_job("cron", hour="*", minute="*/5") # for testing
+@sched.scheduled_job("cron", hour="*", minute="*/2") # for testing
 def destalinate_job():
     print("Destalinating")
     if "SB_TOKEN" not in os.environ or "API_TOKEN" not in os.environ:
