@@ -103,7 +103,8 @@ class Destalinator(object):
         info = self.slacker.get_channel_info(channel_name)
         age = info['age']
         age = age / 86400
-        print "{} age: {}. (days {})".format(channel_name, age, days)
+        if channel_name == "woke":
+            print "{} age: {}. (days {})".format(channel_name, age, days)
         return age > days
 
     def stale(self, channel_name, days):
@@ -113,7 +114,7 @@ class Destalinator(object):
         """
         minimum_age = self.channel_minimum_age(channel_name, days)
         if channel_name == "woke":
-            self.debug("{} minimum_age {} and {} days old".format(channel_name, minimum_age, days))
+            print "{} minimum_age {} and {} days old".format(channel_name, minimum_age, days)
         if not minimum_age:
             if channel_name == "woke":
                 self.debug("Not checking if {} is stale -- it's too new".format(channel_name))
@@ -163,7 +164,6 @@ class Destalinator(object):
         messages = self.get_messages(channel_name, days)
         if channel_name == "woke":
             print self.warning_text
-            print "\n\n"
             print "force warn: {}\n\nmessages for {}: {}".format(force_warn, channel_name, messages) 
         texts = [x.get("text").strip() for x in messages if x.get("text")]
         if self.warning_text in texts and not force_warn:
