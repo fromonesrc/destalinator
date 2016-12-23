@@ -59,6 +59,25 @@ ignore_channels:
   - retreat
   - running
   - cheddar
+  - on-call
+  - parenting
+  - crafty
+  - devlearn_2016
+  - git-rise
+  - heyo_nuke_unverified
+  - i-www-ecomm-161028
+  - i4pl_conference_toron
+  - ipc
+  - panic
+  - peek-mac
+  - product-activations
+  - respect-subs
+  - studio-releases
+  - theme-colors-and-fonts
+  - trust-center
+  - twitter
+  - woke
+  - www-design-review
 
 # Regular expression patterns for additional channels to ignore during archiving
 ignore_channel_patterns:
