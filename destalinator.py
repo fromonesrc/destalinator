@@ -113,7 +113,8 @@ class Destalinator(object):
         if channel_name == "woke":
             self.debug("{} minimum_age {}".format(channel_name, minimum_age))
         if not minimum_age:
-            self.debug("Not checking if {} is stale -- it's too new".format(channel_name))
+            if channel_name == "woke":
+                self.debug("Not checking if {} is stale -- it's too new".format(channel_name))
             return False
         messages = self.get_messages(channel_name, days)
         messages = [
