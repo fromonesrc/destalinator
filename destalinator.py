@@ -69,6 +69,7 @@ class Destalinator(object):
             self.debug(message)
 
     def archive(self, channel_name):
+        print "Archive: {}".format(channel_name)
         """
         Archives the given channel name.  Returns the response content
         """
