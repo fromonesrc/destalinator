@@ -76,7 +76,6 @@ ignore_channels:
   - theme-colors-and-fonts
   - trust-center
   - twitter
-  - woke
   - www-design-review
 
 # Regular expression patterns for additional channels to ignore during archiving
