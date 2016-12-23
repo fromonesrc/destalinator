@@ -47,6 +47,7 @@ class Destalinator(object):
         return ret
 
     def safe_archive(self, channel_name):
+        print "safe_archive()"
         """
         Arhives channel if today's date is after self.earliest_archive_date
         and if channel does not only contain SCGs (Single-Channel Guests)
