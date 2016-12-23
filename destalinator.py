@@ -74,7 +74,7 @@ class Destalinator(object):
         Archives the given channel name.  Returns the response content
         """
         if self.ignore_channel(channel_name):
-            self.debug("Not warning {} because it's in ignore_channels".format(channel_name))
+            #self.debug("Not warning {} because it's in ignore_channels".format(channel_name))
             return
         
         if self.destalinator_activated:
@@ -200,7 +200,7 @@ class Destalinator(object):
         self.action("Safe-archiving all channels stale for more than {} days".format(days))
         for channel in sorted(self.slacker.channels_by_name.keys()):
             if self.ignore_channel(channel):
-                self.debug("Not archiving {} because it's in ignore_channels".format(channel))
+                #self.debug("Not archiving {} because it's in ignore_channels".format(channel))
                 continue
             if self.stale(channel, days):
                 self.debug("Attempting to safe-archive {}".format(channel))
@@ -229,7 +229,7 @@ class Destalinator(object):
         stale = []
         for channel in sorted(self.slacker.channels_by_name.keys()):
             if self.ignore_channel(channel):
-                self.debug("Not warning {} because it's in ignore_channels".format(channel))
+                #self.debug("Not warning {} because it's in ignore_channels".format(channel))
                 continue
             if self.stale(channel, days):
                 if self.warn(channel, days, force_warn):
