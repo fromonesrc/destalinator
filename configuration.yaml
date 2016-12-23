@@ -69,11 +69,12 @@ ignore_channels:
   - i4pl_conference_toron
   - ipc
   - panic
+  - calm
   - peek-mac
-  - product-activations
+  - prod-activations
   - respect-subs
   - studio-releases
-  - theme-colors-and-fonts
+  - theme-colors-and-font
   - trust-center
   - twitter
   - www-design-review
