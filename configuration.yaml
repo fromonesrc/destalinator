@@ -36,45 +36,33 @@ log_channel: "tidyslack-log"
 
 # Channels to ignore when archiving (i.e. they can be silent and not get archived)
 ignore_channels:
-  - chaos-monkey
-  - high-impact-issues
-  - oss
-  - oss-security
-  - people
-  - postmortems
-  - slack-tips
-  - studio-notifications
-  - tidyslack-log
-  - marketo-noise
+  - "null"
   - articulate-dot-com
+  - chaos-monkey
+  - cheddar
+  - crafty
   - dailydemo
   - diversity
   - giffies
+  - git-rise
   - gmail
-  - "null"
+  - high-impact-issues
+  - marketo-noise
+  - on-call
+  - oss
+  - oss-security
+  - parenting
   - pennsylvania
-  - shush
-  - storyline-releases
+  - people
+  - postmortems
+  - prod-activations
   - retreat
   - running
-  - cheddar
-  - on-call
-  - parenting
-  - crafty
-  - devlearn_2016
-  - git-rise
-  - heyo_nuke_unverified
-  - i-www-ecomm-161028
-  - i4pl_conference_toron
-  - ipc
-  - panic
-  - calm
-  - peek-mac
-  - prod-activations
-  - respect-subs
-  - studio-releases
-  - theme-colors-and-font
-  - trust-center
+  - shush
+  - slack-tips
+  - storyline-releases
+  - studio-notifications
+  - tidyslack-log
   - twitter
 
 # Regular expression patterns for additional channels to ignore during archiving
