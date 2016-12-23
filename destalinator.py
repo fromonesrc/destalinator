@@ -198,7 +198,7 @@ class Destalinator(object):
                 self.debug("Not archiving {} because it's in ignore_channels".format(channel))
                 continue
             if self.stale(channel, days):
-                # self.debug("Attempting to safe-archive {}".format(channel))
+                self.debug("Attempting to safe-archive {}".format(channel))
                 self.safe_archive(channel)
 
     def ignore_channel(self, channel_name):
