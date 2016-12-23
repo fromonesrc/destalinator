@@ -154,7 +154,7 @@ class Destalinator(object):
         returns True/False whether or not we actually warned
         """
         if self.ignore_channel(channel_name):
-            self.debug("Not warning {} because it's in ignore_channels".format(channel_name))
+            #self.debug("Not warning {} because it's in ignore_channels".format(channel_name))
             return False
         messages = self.get_messages(channel_name, days)
         if channel_name == "woke":
