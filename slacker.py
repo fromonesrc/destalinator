@@ -172,7 +172,7 @@ class Slacker(object):
         created = ret['channel']['created']
         age = now - created
         ret['channel']['age'] = age
-        self.debug("{} is {} seconds old".format(channel, age))
+        print("{} is {} seconds old".format(channel_name, age))
         return ret['channel']
 
     def get_all_channel_objects(self, exclude_archived=True):
