@@ -47,7 +47,6 @@ class Destalinator(object):
         return ret
 
     def safe_archive(self, channel_name):
-        print "safe_archive()"
         """
         Arhives channel if today's date is after self.earliest_archive_date
         and if channel does not only contain SCGs (Single-Channel Guests)
@@ -70,12 +69,11 @@ class Destalinator(object):
             self.debug(message)
 
     def archive(self, channel_name):
-        print "Archive: {}".format(channel_name)
         """
         Archives the given channel name.  Returns the response content
         """
         if self.ignore_channel(channel_name):
-            #self.debug("Not warning {} because it's in ignore_channels".format(channel_name))
+            self.debug("Not warning {} because it's in ignore_channels".format(channel_name))
             return
         
         if self.destalinator_activated:
@@ -112,7 +110,7 @@ class Destalinator(object):
         """
         minimum_age = self.channel_minimum_age(channel_name, days)
         if not minimum_age:
-            self.debug("Not checking if {} is stale -- it's too new".format(channel_name))
+            # self.debug("Not checking if {} is stale -- it's too new".format(channel_name))
             return False
         messages = self.get_messages(channel_name, days)
         messages = [
@@ -154,9 +152,10 @@ class Destalinator(object):
         returns True/False whether or not we actually warned
         """
         if self.ignore_channel(channel_name):
-            #self.debug("Not warning {} because it's in ignore_channels".format(channel_name))
+            self.debug("Not warning {} because it's in ignore_channels".format(channel_name))
             return False
         messages = self.get_messages(channel_name, days)
+        # print "messages for {}: {}".format(channel_name, messages)
         texts = [x.get("text").strip() for x in messages if x.get("text")]
         if self.warning_text in texts and not force_warn:
             # nothing to do
@@ -193,14 +192,12 @@ class Destalinator(object):
         Safe-archives all channels stale longer than DAYS days
         """
         self.action("Safe-archiving all channels stale for more than {} days".format(days))
-        print "attempting to archive..."
         for channel in sorted(self.slacker.channels_by_name.keys()):
-            print "{}...".format(channel)
             if self.ignore_channel(channel):
-                print("Not archiving {} because it's in ignore_channels".format(channel))
+                self.debug("Not archiving {} because it's in ignore_channels".format(channel))
                 continue
             if self.stale(channel, days):
-                print("Attempting to safe-archive {}".format(channel))
+                # self.debug("Attempting to safe-archive {}".format(channel))
                 self.safe_archive(channel)
 
     def ignore_channel(self, channel_name):
@@ -226,7 +223,7 @@ class Destalinator(object):
         stale = []
         for channel in sorted(self.slacker.channels_by_name.keys()):
             if self.ignore_channel(channel):
-                #self.debug("Not warning {} because it's in ignore_channels".format(channel))
+                self.debug("Not warning {} because it's in ignore_channels".format(channel))
                 continue
             if self.stale(channel, days):
                 if self.warn(channel, days, force_warn):
