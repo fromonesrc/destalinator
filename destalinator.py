@@ -157,6 +157,8 @@ class Destalinator(object):
             return False
         messages = self.get_messages(channel_name, days)
         if channel_name == "woke":
+            print self.warning_text
+            print "\n\n"
             print "force warn: {}\n\nmessages for {}: {}".format(force_warn, channel_name, messages) 
         texts = [x.get("text").strip() for x in messages if x.get("text")]
         if self.warning_text in texts and not force_warn:
