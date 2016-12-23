@@ -103,8 +103,6 @@ class Destalinator(object):
         info = self.slacker.get_channel_info(channel_name)
         age = info['age']
         age = age / 86400
-        if channel_name == "woke":
-            print "{} age: {}. (days {})".format(channel_name, age, days)
         return age > days
 
     def stale(self, channel_name, days):
@@ -113,11 +111,8 @@ class Destalinator(object):
         no messages in the last DAYS days which are not from config.ignore_users
         """
         minimum_age = self.channel_minimum_age(channel_name, days)
-        if channel_name == "woke":
-            print "{} minimum_age {} and {} days old".format(channel_name, minimum_age, days)
         if not minimum_age:
-            if channel_name == "woke":
-                self.debug("Not checking if {} is stale -- it's too new".format(channel_name))
+            self.debug("Not checking if {} is stale -- it's too new".format(channel_name))
             return False
         messages = self.get_messages(channel_name, days)
         messages = [
