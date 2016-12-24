@@ -38,6 +38,7 @@ log_channel: "tidyslack-log"
 ignore_channels:
   - "null"
   - articulate-dot-com
+  - articulate-lean-in
   - chaos-monkey
   - cheddar
   - crafty
